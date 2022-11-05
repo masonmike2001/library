@@ -1,0 +1,36 @@
+body {
+    display: grid;
+    background-color: antiquewhite;
+    grid-template: max-content / 1fr 6fr;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+}
+
+
+#main-content {
+    margin: inherit auto;
+    text-align: center;
+}
+
+#sidebar {
+    border-right: 2px solid black;
+}
+
+#book-grid {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 95%;
+
+    margin: auto;
+    margin-top: 20px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    background-color: crimson;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
