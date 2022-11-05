@@ -10,45 +10,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     </head>
     <body>
-        <div id="sidebar">
+        <div id="sidebar" class="retracted">
             <h2>Create a new book:</h2>
-            <input type="text">
-            <input type="text">
-            <input type="number">
-            <input type="submit">
+            <label for="title">Title:<input id="title" type="text"></label>
+            <label for="author">Author:<input id="author" type="text"></label>
+            <label for="pages">Pages:<input id="pages" type="number"></label>
+
+            <label for="isRead">Already read the book?:
+                <select name="isRead" id="isRead">
+                    <option value="no">No</option>
+                    <option value="yes">Yes</option>
+                </select>
+            </label>
+            <input type="submit" value="Create">
         </div>
         <div id="main-content">
             <h1>mramLibrary</h1>
             <hr>
-            <button>New Book</button>
+            <button id="book-form">New Book</button>
             <div id="book-grid">
-                <div class="book-card">
-                    <h4 class="title">The Hobbit</h4>
-                    <h4 class="author">Tolkien</h4>
-                    <h4 class="pages">245</h4>
-                    <button class="read">Read</button>
-                    <button class="remove">Delete</button>
-                </div>
-                <div class="book-card">
-                    <h4 class="title">The Hobbit</h4>
-                    <h4 class="author">Tolkien</h4>
-                    <h4 class="pages">245</h4>
-                    <button class="read">Read</button>
-                    <button class="remove">Delete</button>
-                </div>
-                <div class="book-card">
-                    <h4 class="title">The Hobbit</h4>
-                    <h4 class="author">Tolkien</h4>
-                    <h4 class="pages">245</h4>
-                    <button class="read">Read</button>
-                    <button class="remove">Delete</button>
-                </div>
-                <div class="book-card">
-                    <h4 class="title">The Hobbit</h4>
-                    <h4 class="author">Tolkien</h4>
-                    <h4 class="pages">245</h4>
-                    <button class="read">Read</button>
-                    <button class="remove">Delete</button>
+                <!--Books are added HERE-->
+
                 </div>
             </div>
         </div>

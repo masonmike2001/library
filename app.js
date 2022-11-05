@@ -1,8 +1,28 @@
 let myLibrary = [];
 
-function Book() 
+const form = document.querySelectorAll("input");
+const bookGrid = document.querySelector("#book-grid");
+const formOpen = document.querySelector("#book-form");
+const sidebar = document.querySelector("#sidebar");
+
+form[3].addEventListener("click", addBookToLibrary);
+formOpen.addEventListener("click", function () {
+  if (sidebar.className === "retracted")
+  {
+    sidebar.classList.remove("retracted")
+  }
+  else
+  {
+    sidebar.className = "retracted";
+  }
+
+})
+
+const isReadDropdown = document.querySelector("select");
+
+function Book(title, author, pages, isRead) 
 {
-    //constructor
+  //constructor
   this.title = title;
   this.author = author;
   this.pages = pages;
@@ -11,13 +31,55 @@ function Book()
 
 function addBookToLibrary()
 {
-    
-}
+    if (form[0].value != '' && form[1].value != '' && form[2].value != '')
+    {
+      let isReadText;
+      if (isReadDropdown.value === "no")
+      {
+       isRead = "Not read"
+      }
+      else {
+       isRead = "Read."
+      }
+      myLibrary[myLibrary.length] = new Book(form[0].value, form[1].value, form[2].value, isRead);
+    }
+    displayBooks();
+    for (i = 0; i < 3; i++)
+    {
+      form[i].value = '';
+    }
+  }
 
 function displayBooks()
 {
-for (i = 0; i < myLibrary.length; i++) {
     //display the book in DOM grid with pertinent info
+   let bookCard = document.createElement("div");
+   bookCard.className = "book-card";
+   let bookTitle = document.createElement("h4");
+   bookTitle.textContent = myLibrary[myLibrary.length - 1].title;
+   let bookAuthor = document.createElement("h4");
+   bookAuthor.textContent = myLibrary[myLibrary.length - 1].author;
+   let bookPages = document.createElement("h4");
+   bookPages.textContent = myLibrary[myLibrary.length - 1].pages; + " pages";
 
+   let bookIsRead = document.createElement("h4");
+   bookIsRead.textContent = myLibrary[myLibrary.length - 1].isRead;
+
+
+   let deleteBtn = document.createElement("button");
+   deleteBtn.textContent = "Delete";
+   deleteBtn.addEventListener("click", deleteBookFromLibrary)
+   
+   bookGrid.appendChild(bookCard);
+   bookCard.appendChild(bookTitle);
+   bookCard.appendChild(bookAuthor);
+   bookCard.appendChild(bookPages);
+   bookCard.appendChild(bookIsRead);
+   bookCard.appendChild(deleteBtn);
 }
+
+function deleteBookFromLibrary(e)
+{
+  let cardToRemove = e.target.parentElement;
+  cardToRemove.parentNode.removeChild(cardToRemove);
 }
