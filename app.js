@@ -39,7 +39,7 @@ function addBookToLibrary()
        isRead = "Not read"
       }
       else {
-       isRead = "Read."
+       isRead = "Read"
       }
       myLibrary[myLibrary.length] = new Book(form[0].value, form[1].value, form[2].value, isRead);
     }
@@ -62,12 +62,36 @@ function displayBooks()
    let bookPages = document.createElement("h4");
    bookPages.textContent = myLibrary[myLibrary.length - 1].pages; + " pages";
 
-   let bookIsRead = document.createElement("h4");
+   let bookIsRead = document.createElement("button");
    bookIsRead.textContent = myLibrary[myLibrary.length - 1].isRead;
+
+   if (bookIsRead.textContent === "Not read")
+   {
+      bookIsRead.className = "unread"  
+   }
+   else
+   {
+      bookIsRead.className = "read";
+   }
+
+
+   bookIsRead.addEventListener("click", function() {
+    if (bookIsRead.textContent === "Not read")
+    {
+      bookIsRead.textContent = "Read";
+      bookIsRead.className = "read";
+    }
+    else
+    {
+      bookIsRead.textContent = "Not read";
+      bookIsRead.className = "unread" 
+    }
+   })
 
 
    let deleteBtn = document.createElement("button");
    deleteBtn.textContent = "Delete";
+   deleteBtn.className = "del-btn";
    deleteBtn.addEventListener("click", deleteBookFromLibrary)
    
    bookGrid.appendChild(bookCard);

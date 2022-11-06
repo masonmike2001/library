@@ -1,23 +1,32 @@
 body {
     display: grid;
-    background-color: antiquewhite;
-    grid-template: max-content / 1fr 6fr;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 0;
+    background-color: #323e42;
+    grid-template: max-content / 1.5fr 6fr;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
 
 #main-content {
     margin: inherit auto;
     text-align: center;
+    color: aliceblue;
+    padding: 15px;
+    margin-left: 60px;
 }
 
 #sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    border-right: 2px solid black;
+    justify-content: center;
+    gap: 40px;
+    background-color: #270751;
+    color: aliceblue;
+    height: 100vh;
+    padding: 15px;
+    
+
 }
 
 .retracted {
@@ -27,7 +36,7 @@ body {
 #book-grid {
     display: grid;
     gap: 1em;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, 400px);
     max-width: 95%;
 
     margin: auto;
@@ -43,3 +52,35 @@ body {
     border-radius: 5px;
     border-left: 15px solid darkred;
 }
+
+.read {
+    background-color: greenyellow;
+}
+
+.unread {
+    background-color: maroon;
+    color: white;
+}
+
+.del-btn {
+    margin-top: 10px !important;
+}
+
+button, .submit {
+    width: 300px;
+    border: none;
+    border-radius: 10px;
+    margin: none auto;
+    padding: 10px;
+}
+
+
+label>input {
+    display: block;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+
+ 
