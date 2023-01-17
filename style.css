@@ -1,86 +1,85 @@
 body {
-    display: grid;
-    background-color: #323e42;
-    grid-template: max-content / 1.5fr 6fr;
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
+  display: grid;
+  background-color: #323e42;
+  grid-template: max-content / 1.5fr 6fr;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
-
 #main-content {
-    margin: inherit auto;
-    text-align: center;
-    color: aliceblue;
-    padding: 15px;
-    margin-left: 60px;
+  margin: inherit auto;
+  text-align: center;
+  color: aliceblue;
+  padding: 15px;
+  margin-left: 60px;
 }
 
 #sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    background-color: #270751;
-    color: aliceblue;
-    height: 100vh;
-    padding: 15px;
-    
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  background-color: #270751;
+  color: aliceblue;
+  height: 100vh;
+  padding: 15px;
 }
 
 .retracted {
-    display: none !important; 
+  display: none !important;
 }
 
 #book-grid {
-    display: grid;
-    gap: 1em;
-    grid-template-columns: repeat(auto-fit, 400px);
-    max-width: 95%;
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, 400px);
+  max-width: 95%;
 
-    margin: auto;
-    margin-top: 20px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 .book-card {
-    display: flex;
-    flex-direction: column;
-    background-color: crimson;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    border-left: 15px solid darkred;
+  display: flex;
+  flex-direction: column;
+  background-color: crimson;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  border-left: 15px solid darkred;
+}
+
+.book-card>button {
+    width: 100%;
 }
 
 .read {
-    background-color: greenyellow;
+  background-color: greenyellow;
 }
 
 .unread {
-    background-color: maroon;
-    color: white;
+  background-color: maroon;
+  color: white;
 }
 
 .del-btn {
-    margin-top: 10px !important;
+  margin-top: 10px !important;
 }
 
-button, .submit {
-    width: 300px;
-    border: none;
-    border-radius: 10px;
-    margin: none auto;
-    padding: 10px;
+button,
+.submit {
+  width: 300px;
+  border: none;
+  border-radius: 10px;
+  margin: none auto;
+  padding: 10px;
 }
 
-
-label>input {
-    display: block;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 15px;
+label > input {
+  display: block;
+  margin-top: 5px;
+  margin-left: 2px;
+  border-radius: 5px;
+  padding: 10px;
 }
-
-
- 
