@@ -1,6 +1,6 @@
 body {
   display: grid;
-  background-color: #323e42;
+  background-color: white;
   grid-template: max-content / 1.5fr 6fr;
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -9,7 +9,7 @@ body {
 #main-content {
   margin: inherit auto;
   text-align: center;
-  color: aliceblue;
+  color: slategrey;
   padding: 15px;
   margin-left: 60px;
 }
